@@ -19,4 +19,6 @@ fun main(args:Array<String>){
 //    a=1  编译不通过
 
 
+
+
 }

@@ -9,13 +9,17 @@ operator fun Counter.plus(increment:Int):Counter{
     return Counter(index+increment)
 }
 
-data class Person(val name:String,var age:Int){
+data class Person(var name:String,var age:Int,var Sex:String){
+
+    override fun toString(): String {
+        return "Person(name='$name',age='$age',sex='$Sex')"
+    }
     fun say(msg:String){
         println("$name say:$msg")
     }
 }
 infix fun Person.grow(year:Int):Person{
-    return Person(name,age+year)
+    return Person(name,age+year,"M")
 }
 
 fun what(){
@@ -41,7 +45,7 @@ fun main(args:Array<String>){
     val x2=x1?:"111"//?:操作符限定和null做比较，专门检查是否为空
     println(x2)
 
-    val one=Person("liz",18)
+    val one=Person("liz",18,"M")
     val one1=one grow 10
     println(one1)
 }
